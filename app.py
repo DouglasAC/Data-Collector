@@ -29,7 +29,12 @@ def success():
         email = request.form['email_name']
         height = request.form['height_name']
         print(email, height)
-        return render_template('success.html')
+        if db.session.query(Data).filter(Data.email == email).count() == 0:
+            db.session.add(Data(email, height))
+            db.session.commit()
+            return render_template('success.html')
+        else:
+            return render_template('index.html', text="¡Parece que ya tenemos algo de esa dirección de correo electrónico!")
 
 if __name__ == '__main__':
     app.run(debug=True)
