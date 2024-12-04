@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "es">
+    <meta charset="UTF-8">
+    <title>Aplicación de recopilación de datos</title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/main.css">
+    </head>
+    <body>
+        <div class = "container">
+            <h1>Recolectando altura</h1>
+            <h3>Por favor, rellene los campos para obtener estadísticas de población sobre altura</h3>
+            <form action = "success.html" metod = "POST">
+                <input title="Tu correo electrónico estará seguro con nosotros" placeholder="Introduzca su dirección de correo electrónico" type ="email" name = "email_name" required><br>
+                <input title="Tus datos estarán seguros con nosotros" placeholder="Introduzca su altura en cm" type ="number" min="50" max="300" name = "height_name" required><br>
+                <button type="Submit">Enviar</button>
+            </form>
+        </div>
+    </body>
+</html>
