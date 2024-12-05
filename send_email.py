@@ -4,13 +4,13 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
 
-def send_email(email, height):
+def send_email(email, height, average_height, count):
     from_email = os.getenv('FROM_EMAIL')
     from_password = os.getenv('FROM_PASSWORD')
     to_email = email
 
     subject = "Datos de altura"
-    message = "¡Hola! Tu altura es <strong>%s</strong>. ¡Mantente erguido!" % height
+    message = "¡Hola! Tu altura es <strong>%s</strong>. ¡Mantente erguido! El promedio de todos es %s y eso se calcula entre %s personas." % (height, average_height, count)
 
     msg = MIMEMultipart()
     msg['Subject'] = subject
