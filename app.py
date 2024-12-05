@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
+from send_email import send_email
 
 app = Flask(__name__)
 
@@ -29,9 +30,11 @@ def success():
         email = request.form['email_name']
         height = request.form['height_name']
         print(email, height)
+        send_email(email, height)
         if db.session.query(Data).filter(Data.email == email).count() == 0:
             db.session.add(Data(email, height))
             db.session.commit()
+            
             return render_template('success.html')
         else:
             return render_template('index.html', text="¡Parece que ya tenemos algo de esa dirección de correo electrónico!")
