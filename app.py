@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from send_email import send_email
 from sqlalchemy.sql import func
 from dotenv import load_dotenv
+load_dotenv() 
 import os
 
 app = Flask(__name__)
