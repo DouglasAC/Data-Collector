@@ -18,13 +18,18 @@ def send_email(email, height, average_height, count):
     msg['From'] = from_email
     msg.attach(MIMEText(message, 'html'))
     
-    smtp_server = "smtp.gmail.com"
-    smtp_port = 587
-    gmail = smtplib.SMTP(smtp_server, smtp_port)
-    gmail.ehlo()
-    gmail.starttls()
-    gmail.login(from_email, from_password)
-    gmail.sendmail(from_email, to_email, msg.as_string())
+    try:
+        smtp_server = "smtp.gmail.com"
+        smtp_port = 587
+        gmail = smtplib.SMTP(smtp_server, smtp_port)
+        gmail.ehlo()
+        gmail.starttls()
+        gmail.login(from_email, from_password)
+        gmail.sendmail(from_email, to_email, msg.as_string())
+    except Exception as e:
+        print(f"Error al enviar correo: {e}")
+    finally:
+        gmail.quit()
     print("Correo enviado")
     
     
