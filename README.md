@@ -77,5 +77,23 @@ python-dotenv
 psycopg2-binary
 ```
 
+## Capturas de pantalla
+
+1. Página de inicio
+
+    ![Página de inicio](imgs/principal.png)
+
+2. Página correcta
+
+    ![Página correcta](imgs/correcto.png)
+
+3. Mensaje de error
+
+    ![Mensaje de error](imgs/correo_repetido.png)
+
+4. Correo recibido 
+
+    ![Correo recibido](imgs/correo_recibido.png)
+
 ## Contribución
 Si deseas contribuir a este proyecto, realiza un fork del repositorio, crea una rama con tus cambios y envía un pull request.
