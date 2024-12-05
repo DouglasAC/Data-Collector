@@ -50,3 +50,9 @@ html, body {
     color: #ffffff;
     margin-top: 80px;
 }
+
+.message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
